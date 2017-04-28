@@ -1,0 +1,33 @@
+# Build app files
+*.apk
+*.ap_
+
+# Binary Files
+*.class
+*.dex
+
+# Gradle
+.gradle/
+build/
+
+# Log files
+*.log
+
+# Android studio
+*.iml
+.idea/
+
+#Local configuration
+local.properties
+
+#Key store files
+*.jks
+
+# Google Services
+google-services.json
+
+# Android Studio captures folder
+captures/
+
+# External native build folder
+.externalNativeBuild
