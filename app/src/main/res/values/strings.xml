@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">dexsys-test-assignment</string>
+    <string name="app_name">Gallery</string>
+
+    <string name="activity_title_gallery">Gallery</string>
+    <string name="activity_title_preview">Preview</string>
+
+    <string name="text_permission_denied"> Permission denied\nPlease try again</string>
+
 </resources>
