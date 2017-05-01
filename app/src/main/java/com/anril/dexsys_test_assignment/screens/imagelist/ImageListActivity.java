@@ -138,4 +138,10 @@ public class ImageListActivity extends AppCompatActivity implements ImageListCon
     public void onRefresh() {
         presenter.onRefresh();
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        presenter.onDestroy();
+    }
 }

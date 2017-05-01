@@ -90,7 +90,6 @@ public class ImagePreviewActivity extends AppCompatActivity
     @Override
     public void hideTextPermissionRequired() {
         permissionDeniedTextView.setVisibility(View.GONE);
-
     }
 
 }

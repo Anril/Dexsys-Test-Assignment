@@ -7,6 +7,7 @@ import org.reactivestreams.Subscription;
 
 import java.util.List;
 
+import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -56,9 +57,11 @@ class ImageListPresenter implements ImageListContract.Presenter {
     private void loadImages() {
         if (view.isPermissionGranted()) {
             view.hideTextPermissionRequired();
-            view.showRefreshIndicator();
 
-            loadImagesSubscription = loadGalleryImages.execute()
+            loadImagesSubscription = Observable.just(1)
+                    .doOnNext(x -> view.showRefreshIndicator())
+                    .subscribeOn(AndroidSchedulers.mainThread())
+                    .flatMap(x -> loadGalleryImages.execute())
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .doOnComplete(view::hideRefreshIndicator)

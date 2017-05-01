@@ -33,7 +33,7 @@ public class LoadGalleryImages {
         return Observable.create(emitter -> {
             try {
                 // long loading imitation
-                SystemClock.sleep(1_000);
+                SystemClock.sleep(1_00);
 
                 emitter.onNext(getGalleryImages());
                 emitter.onComplete();
