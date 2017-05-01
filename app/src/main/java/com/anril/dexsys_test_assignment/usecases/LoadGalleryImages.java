@@ -4,12 +4,18 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.SystemClock;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 
 import com.anril.dexsys_test_assignment.models.GalleryImage;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
 
 /**
  * Created by Anril on 28.04.2017.
@@ -23,7 +29,22 @@ public class LoadGalleryImages {
         contentResolver = context.getContentResolver();
     }
 
-    public List<GalleryImage> execute() {
+    public Observable<List<GalleryImage>> execute() {
+        return Observable.create(emitter -> {
+            try {
+                // long loading imitation
+                SystemClock.sleep(1_000);
+
+                emitter.onNext(getGalleryImages());
+                emitter.onComplete();
+            } catch (Exception e) {
+                emitter.onError(e);
+            }
+        });
+    }
+
+    @NonNull
+    private List<GalleryImage> getGalleryImages() {
         List<GalleryImage> images = new ArrayList<>();
         Cursor cursor = null;
         try {
