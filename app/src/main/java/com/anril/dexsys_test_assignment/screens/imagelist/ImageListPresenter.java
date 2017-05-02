@@ -69,6 +69,7 @@ class ImageListPresenter implements ImageListContract.Presenter {
 
         } else {
             view.hideRefreshIndicator();
+            view.showTextPermissionRequired();
             if (view.shouldShowPermissionRationale()) {
                 view.showPermissionRationale();
             } else {
