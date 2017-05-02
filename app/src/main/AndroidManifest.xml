@@ -12,7 +12,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".screens.imagelist.ImageListActivity"
-            android:label="@string/activity_title_gallery">
+            android:label="@string/activity_title_gallery"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -22,6 +23,7 @@
             android:name=".screens.imagepreview.ImagePreviewActivity"
             android:label="@string/activity_title_preview"
             android:parentActivityName=".screens.imagelist.ImageListActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".screens.imagelist.ImageListActivity" />

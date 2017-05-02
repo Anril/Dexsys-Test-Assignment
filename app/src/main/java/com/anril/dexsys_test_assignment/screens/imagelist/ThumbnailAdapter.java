@@ -40,7 +40,7 @@ class ThumbnailAdapter extends RecyclerView.Adapter<ThumbnailAdapter.ViewHolder>
         this.presenter = presenter;
     }
 
-    public void replaceDataSet(List<GalleryImage> images) {
+    void replaceDataSet(List<GalleryImage> images) {
         this.images = images;
         notifyDataSetChanged();
     }
@@ -83,7 +83,7 @@ class ThumbnailAdapter extends RecyclerView.Adapter<ThumbnailAdapter.ViewHolder>
             holder.thumbnailImageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    presenter.onThumbnailClick(images.get(position));
+                    presenter.onThumbnailClick(images.get(holder.getAdapterPosition()));
                 }
             });
     }

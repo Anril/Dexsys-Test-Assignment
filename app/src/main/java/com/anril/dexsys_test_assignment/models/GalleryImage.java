@@ -93,4 +93,15 @@ public class GalleryImage implements Parcelable {
         dest.writeLong(date);
         dest.writeParcelable(uri, flags);
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null)
+            return false;
+        if (!(obj instanceof GalleryImage))
+            return false;
+
+        GalleryImage otherObject = (GalleryImage) obj;
+        return  (id == otherObject.getId());
+    }
 }

@@ -36,6 +36,8 @@ interface ImageListContract {
         void onRefresh();
 
         void onThumbnailClick(GalleryImage image);
+
+        void onDestroy();
     }
 
 }
