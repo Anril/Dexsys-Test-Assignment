@@ -11,6 +11,6 @@ Test assignment for android developer
 <img src="https://github.com/Anril/Dexsys-Test-Assignment/blob/master/screenshots/Screenshot_1493691574.png" width="300" > <img src="https://github.com/Anril/Dexsys-Test-Assignment/blob/master/screenshots/Screenshot_1493691579.png" width="300">
 
 ## Tests
-Tests are't completely covered
+Presenters are not comletely coveried by tests
 
 ![](https://github.com/Anril/Dexsys-Test-Assignment/blob/master/readme/2017-05-02_06-13-02.png)
